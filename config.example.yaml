@@ -1,0 +1,28 @@
+# HA-AI Learner configuration
+# Copy this file to config.yaml (next to where you run ha-learner),
+# or to ~/.config/ha-ai-learner/config.yaml
+#
+# Every value can also be set via environment variables:
+#   HA_URL, HA_TOKEN, HA_LEARNER_DATA_DIR, HA_LEARNER_ALLOW_CALLS
+
+# Your Home Assistant instance (reachable on the local network)
+ha_url: "http://homeassistant.local:8123"
+
+# Long-lived access token:
+# HA UI → your profile (bottom left) → Security tab →
+# "Long-lived access tokens" → Create token
+ha_token: "PASTE_YOUR_TOKEN_HERE"
+
+# Where the knowledge base is written
+# (knowledge.json, knowledge.md, answers.json, questions.json, patterns.json, changes.log)
+data_dir: "~/.ha-ai-learner"
+
+# How often 'ha-learner watch' rescans (minutes)
+scan_interval_minutes: 60
+
+# How many days of history to mine for usage patterns
+history_days: 7
+
+# Allow the AI to call Home Assistant services through MCP (i.e. control devices)?
+# false = read-only (safe default)
+allow_service_calls: false

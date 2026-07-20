@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ha-ai-learner"
+version = "0.1.0"
+description = "Self-learning Home Assistant discovery tool + MCP server: builds a knowledge base of your smart home that AI assistants can actually use"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Tamás Pénzes" }]
+requires-python = ">=3.10"
+keywords = [
+    "home-assistant",
+    "mcp",
+    "model-context-protocol",
+    "smart-home",
+    "ai",
+    "knowledge-base",
+    "claude",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Home Automation",
+]
+dependencies = [
+    "httpx>=0.25",
+    "PyYAML>=6.0",
+    "mcp>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/buppy333/ha-ai-learner"
+Repository = "https://github.com/buppy333/ha-ai-learner"
+Issues = "https://github.com/buppy333/ha-ai-learner/issues"
+Changelog = "https://github.com/buppy333/ha-ai-learner/blob/main/CHANGELOG.md"
+
+[project.scripts]
+ha-learner = "ha_ai_learner.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ha_ai_learner*"]
